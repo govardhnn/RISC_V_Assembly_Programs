@@ -2,7 +2,7 @@
 |#|Problem|Solution|
 |---|----|----|
 ||Fibonacci Series|
-|| Write a RISC-V assembly language program for swapping the contents of two registers, a0 and a1. You may not use any other registers.|[Solution](./asm/6_19_fibonacci.s)|
+|| Write a RISC-V assembly language program for swapping the contents of two registers, a0 and a1. You may not use any other registers.|[Solution](./asm/6_1_swap_without_additional_reg.s)|
 || Suppose you are given an array of both positive and negative integers. Write RISC-V assembly code that finds the subset of the array with the largest sum. Assume that the array’s base address and the number of array elements are in a0 and a1, respectively. Your code should place the resulting subset of the array starting at the base address in a2. Write code that runs as fast as possible.||
 || You are given an array that holds a sentence in a null-terminated string. Write a RISC-V assembly language program to reverse the words in the sentence and store the new sentence back in the array.||
 || Write a RISC-V assembly language program to count the number of ones in a 32-bit number.||
