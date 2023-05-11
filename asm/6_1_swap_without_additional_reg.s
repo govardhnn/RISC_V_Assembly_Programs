@@ -1,5 +1,3 @@
-.text
-.globl .data
 
 addi s2, zero, 1 # a = 1
 addi s3, zero, 2 # b = 2

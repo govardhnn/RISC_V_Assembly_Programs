@@ -1,5 +1,3 @@
-.text
-.globl .data
 
 # counting the number of bits in a reg *great program*
 
