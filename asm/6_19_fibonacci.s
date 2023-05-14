@@ -6,7 +6,7 @@ main:
 	addi s1, zero, 1 # second number
 
 
-	addi s3, zero, 0 # pointer
+	addi s3, zero, 0 # pointer variable
 	addi s4, zero, 7 # range of the series
 	addi s2, s2, 0 # variable for adding the prev. two numbers
 
