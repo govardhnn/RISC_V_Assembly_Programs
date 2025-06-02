@@ -12,10 +12,9 @@ g_sum:
 addi s1, s1, 1
 j exit
 
+exit:
 # Standard exit sequence
 li a0, 0    # Exit code 0
 li a7, 93  # Service 93 is exit
 ecall
-
-exit:
 

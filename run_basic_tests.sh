@@ -18,8 +18,8 @@ echo "Starting Batch Test Run for Basic Examples"
 echo "===================================================="
 echo ""
 
-# Find all .S files in the EXAMPLES_DIR_NAME directory
-find "${EXAMPLES_FULL_PATH}" -maxdepth 1 -type f -name '6_*.S' | while read -r asm_file_path; do
+# Find all .S files in the EXAMPLES_DIR_NAME directory and process them in sorted order
+for asm_file_path in $(find "${EXAMPLES_FULL_PATH}" -maxdepth 1 -type f -name '6_*.S' | sort); do
     filename=$(basename "${asm_file_path}")
 
     echo "----------------------------------------------------"

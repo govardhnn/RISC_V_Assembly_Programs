@@ -15,11 +15,10 @@ loop:
     srli s0, s0, 1 # barrel shifts number to the right by one bit
     j loop 
 
+exit:
 # Standard exit sequence
 li a0, 0    # Exit code 0
 li a7, 93  # Service 93 is exit
 ecall
-
-exit:
 
 
