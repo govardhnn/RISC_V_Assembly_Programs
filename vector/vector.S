@@ -27,6 +27,8 @@ _start:
     # The remaining elements in v4 depend on the tail policy (ta - tail agnostic).
     vcompress.vm v4, v2, v0
 
-    # Exit (unreachable due to the infinite loop, but good practice)
-    li      a7, 93
+    # Standard exit sequence
+    li      a0, 0    # Exit code 0
+    li      a7, 93   # Service 93 is exit
     ecall
+

@@ -58,10 +58,8 @@ _start:
     # Expected v12 (10 elements) = {200, 300, ..., 1000, 1100}
     vrgather.vv v12, v4, v8, v0.t     # v0.t for unmasked (v0 reg still contains all 1s from vmseq)
 
-    # Infinite loop for GDB inspection
-end_loop_full:
-    j       end_loop_full
-
-    # Exit (unreachable)
-    li      a7, 93
+    # Standard exit sequence
+    li      a0, 0    # Exit code 0
+    li      a7, 93   # Service 93 is exit
     ecall
+

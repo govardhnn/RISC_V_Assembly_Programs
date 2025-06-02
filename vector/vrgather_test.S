@@ -21,8 +21,8 @@ _start:
 
     vrgather.vv v3, v2, v1, v0.t
 
-end_loop:
-    j       end_loop
-
-    li      a7, 93
+    # Standard exit sequence
+    li      a0, 0    # Exit code 0
+    li      a7, 93   # Service 93 is exit
     ecall
+

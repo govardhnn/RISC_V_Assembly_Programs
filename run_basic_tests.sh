@@ -4,11 +4,13 @@ set -e
 # Script to build and run all basic assembly examples directly with Spike
 
 PROJECT_ROOT="."
-EXAMPLES_DIR_NAME="basic_examples"
+
 # EXAMPLES_DIR_NAME="vector"
+EXAMPLES_DIR_NAME="vector"
+
 EXAMPLES_FULL_PATH="${PROJECT_ROOT}/${EXAMPLES_DIR_NAME}"
 MAKEFILE_INC="${PROJECT_ROOT}/makefile.inc"
-ASFLAGS_BASIC="-march=rv64gc -g" # Assembler flags for basic examples
+ASFLAGS_BASIC="-march=rv64gcv -g" # Assembler flags for basic examples
 
 # Navigate to the project root directory
 cd "${PROJECT_ROOT}" || { echo "Failed to navigate to ${PROJECT_ROOT}"; exit 1; }
@@ -19,7 +21,7 @@ echo "===================================================="
 echo ""
 
 # Find all .S files in the EXAMPLES_DIR_NAME directory and process them in sorted order
-for asm_file_path in $(find "${EXAMPLES_FULL_PATH}" -maxdepth 1 -type f -name '6_*.S' | sort); do
+for asm_file_path in $(find "${EXAMPLES_FULL_PATH}" -maxdepth 1 -type f -name '*.S' | sort); do
     filename=$(basename "${asm_file_path}")
 
     echo "----------------------------------------------------"
