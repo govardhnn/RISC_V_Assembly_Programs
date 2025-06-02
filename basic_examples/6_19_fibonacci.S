@@ -1,7 +1,10 @@
+.section .text
+
+.globl _start
 
 # Fibonacci Series 
 # 1 1 2 3 5 8 13 21 34 55 
-main: 
+_start: 
 	addi s0, zero, 1 # first number
 	addi s1, zero, 1 # second number
 
@@ -18,4 +21,6 @@ main:
     	bgt s3, s4, exit # loop condition check
     	j loop
    
-	exit:
+exit:
+	li a7, 93
+	ecall

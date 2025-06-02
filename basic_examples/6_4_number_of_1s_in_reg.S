@@ -1,4 +1,7 @@
+.section .text
+.globl _start
 
+_start:
 # counting the number of bits in a reg *great program*
 
 addi s0, zero, 0x137 # should have 6 ones since 0x137 is (0001_0011_0111)base2
@@ -11,6 +14,11 @@ loop:
     add s1, s1, t0 # and then adds that 1 to s1 when 1 is found
     srli s0, s0, 1 # barrel shifts number to the right by one bit
     j loop 
+
+# Standard exit sequence
+li a0, 0    # Exit code 0
+li a7, 93  # Service 93 is exit
+ecall
 
 exit:
 

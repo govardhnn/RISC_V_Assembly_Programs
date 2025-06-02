@@ -1,3 +1,7 @@
+.section .text
+.globl _start
+
+_start:
 # reversing the bits of a register *another great program*
 
 addi s0, zero, 0b10011 # 19 is the number to be reversed, should be converted to 0b11001 ie (25)base10
@@ -5,13 +9,19 @@ addi s0, zero, 0b10011 # 19 is the number to be reversed, should be converted to
 addi s1, zero, 0 # register to store the reversed number
 
 loop: 
-    beq s0, zero exit # if number is reduced to 0, exit
+    beq s0, x0, _program_exit_ops # if number is reduced to 0, exit
     slli s1, s1, 0b1 # shift that number closer to the MSB by 1 bit    
     andi t0, s0, 0b1 # and the LSB of the number with 1 
     add s1, s1, t0 # then save it to s1
     srli s0, s0, 0b1 # shift the original number right, reducing it towards LSB
     j loop
     
+_program_exit_ops:
+# Standard exit sequence
+li a0, 0    # Exit code 0
+li a7, 93  # Service 93 is exit
+ecall
+
 exit:
 
 ##This program in HLL would be like
